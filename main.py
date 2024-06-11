@@ -1,3 +1,4 @@
-name_list = ["Thayla", "James", "Maria", "Kuni"]
-new_name_comprehension = [name+" Malan" for name in name_list]
-print(new_name_comprehension)
+x = 1
+while x < 11:
+  print(x)
+  x = x + 1
