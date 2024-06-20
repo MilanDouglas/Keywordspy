@@ -1,5 +1,12 @@
-def multiply(num1, num2):
-  return num1 * num2
+def f():
+   return ['foo', 'bar', 'baz', 'qux']
+  
 
-x = multiply(10)
+x = f()
+print(x)
+
+x = f()[2]
+print(x)
+
+x = f()[::-1]
 print(x)
