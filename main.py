@@ -1,9 +1,5 @@
-class Emperor:
-  def __init__(self, name, birth, coronation, death):
-    self.name = name
-    self.birth = birth
-    self.coronation = coronation
-    self.death = death
+def multiply(num1, num2):
+  return num1 * num2
 
-charlemagne = Emperor("Charlemagne", 742, 800, 814)
-print(vars(charlemagne))
+x = multiply(10)
+print(x)
