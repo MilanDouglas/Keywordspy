@@ -1,6 +1,4 @@
-from sys import argv
+import qrcode
 
-if len(argv) == 2:
-  print(f"Hello {argv[1]}")
-else:
-  print("Hello, world")
+img = qrcode.make("https://www.youtube.com/watch?v=6yEqkRyrpXo&t=1135s")
+img.save("qr.png", "PNG")
