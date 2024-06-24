@@ -1,12 +1,6 @@
-def f():
-   return ['foo', 'bar', 'baz', 'qux']
-  
+from sys import argv
 
-x = f()
-print(x)
-
-x = f()[2]
-print(x)
-
-x = f()[::-1]
-print(x)
+if len(argv) == 2:
+  print(f"Hello {argv[1]}")
+else:
+  print("Hello, world")
