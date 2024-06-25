@@ -1,4 +1,10 @@
-import qrcode
+books =[]
 
-img = qrcode.make("https://www.youtube.com/watch?v=6yEqkRyrpXo&t=1135s")
-img.save("qr.png", "PNG")
+for i in range(3):
+  book = dict()
+  book["Title"] = input("Enter book title: ")
+  book["Author"] = input("Enter author name: ")
+  books.append(book)
+
+for book in books:
+  print(book)
