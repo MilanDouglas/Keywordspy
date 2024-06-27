@@ -1,6 +1,23 @@
-import os
+import csv
 
-walking = os.walk("/home/")
+with open("favorites.csv", "r") as file:
+  reader = csv.DictReader(file)
+  scratch = 0
+  c = 0
+  python = 0
+  for row in reader:
+    favorite = row["language"]
+    if favorite == "Scratch":
+      scratch += 1
+    elif favorite == "C":
+      c += 1
+    elif favorite == "Python":
+      python += 1
 
-walking = list(walking)
-print(walking)
+print(f"Scratch: {scratch}")
+print(f"C: {c}")
+print(f"Python: {python}")
+
+      
+
+  
