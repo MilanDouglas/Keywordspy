@@ -1,6 +1,6 @@
-import json
+import glob
 
-with open ("sample_json.json", "r") as f:
-  new_data = json.load(f)
+files2 = glob.glob("/home/runner/Keywordspy/*.json")
+print(files2)
 
-print(new_data)
+
