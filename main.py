@@ -1,5 +1,6 @@
-import csv
+import requests
 
-books =[]
+with open ('../data/sample.txt', "r") as f:
+  data = f.read()
 
-with open()
+print(data.splitlines())
