@@ -1,6 +1,6 @@
-import glob
+import os
 
-files2 = glob.glob("/home/runner/Keywordspy/*.json")
-print(files2)
+walking = os.walk("/home/")
 
-
+walking = list(walking)
+print(walking)
