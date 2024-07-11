@@ -15,4 +15,5 @@ html = """
 
 soup = BeautifulSoup(html, features="html.parser")
 all_divs = soup.find_all("div")
-print(all_divs)
+for div in all_divs:
+  print(div.text)
