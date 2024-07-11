@@ -1,12 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://en.wikipedia.org/wiki/List_of_French_monarchs"
-s = requests.get(url)
+s = requests.get("https://en.wikipedia.org/wiki/List_of_French_monarchs")
 
-soup = BeautifulSoup(s.content)
+soup = BeautifulSoup(s.content, features="html.parser")
 body = soup.find("div", {"id": "mw-content-text"})
-for paragraph in body.find_all("p")[:5]:
-  if paragraph.text.strip() != "":
-    print(paragraph.text)
-    
+paragraphs = body.find_all("p")
+for paragraph in paragraphs[:10]:
+  print(paragraph.text)
