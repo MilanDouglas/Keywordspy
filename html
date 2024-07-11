@@ -1,5 +1,3 @@
-from bs4 import BeautifulSoup
-
 html = """
 <html>
     <body>
@@ -12,7 +10,3 @@ html = """
     </body>
 </html>
 """
-
-soup = BeautifulSoup(html, features="html.parser")
-all_divs = soup.find_all("div")
-print(all_divs)
