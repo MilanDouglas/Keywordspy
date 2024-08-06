@@ -1,82 +1,40 @@
-#Lists
-movies = ["When Harry Met Sally", "The hangover", "The Perks of bieng a Wallflower", "The Exorcist"]
+from os import error
+import socket
+import sys
+from datetime import datetime
 
+#Define our Target
+if len(sys.argv) == 2:
+  target = socket.gethostbyname(sys.argv[1]) #Translate hostname to IPv4
+else:
+  print("Invalid amount of arguments.")
+  print("Syntax: python3 scanner.py <ip>")
 
-movies.append("Jaws")
+#Add a pretty banner
+print("." * 50)
+print("Scanning target: "+target)
+print("Time started: "+str(datetime.now()))
+print("." * 50)
 
-movies.insert(2, "Hustle")
-movies.pop(0)
-amber_movies = ["Just Go With It", "50 First Dates"]
-our_fav_movies = movies + amber_movies
+try: 
+  for port in range(50,85):
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket.setdefaulttimeout(1)
+    result = s.connect_ex((target,port))
+    if result == 0:
+      print(f"Port {port} is open")
+      s.close()
 
+except KeyboardInterrupt:
+  print("\n Exiting program.")
+  sys.exit()
 
-grades = [["bob", 82], ["Alice", 90],["Jeff", 73]]
-bobs_grade = grades[0][1]
-grades[0][1] = 83
+except socket.gaierror:
+  print("Hostname could not be resolved.")
+  sys.exit()
 
-#Tuples -Don not change
-grades = ("a", "b", "c", "d", "f")
-#print(grades[1])
-
-#Looping
-#for loops - start to finish an iterate
-vegetables = ["cucumber", "spinach", "cabbage"]
-#for x in vegetables:
-  #print(x)
-
-#Ping an ip address  
-
-#while loops -execute as long as True
-#i = 1
-#while i < 10:
-     #print(i)
-     #i += 1
-
-#ADVANCE STRINGS
-my_name = "Douglas"
-#print(my_name[0])
-#print(my_name[-1])
-
-sentence = "This is a sentence"
-#print(sentence[:4])
-#print(sentence.split())
-sentence_split = sentence.split()
-#print(sentence_split)
-sentence_join = ' '.join(sentence_split)
-#print(sentence_join)
-
-qoute = "He said, \"give me all your money\""
-#print(qoute)
-
-too_much_space = "              hello           "
-#print(too_much_space.strip())
-
-#print("A" in "Apple") #True
-#print("a" in "Apple") #False
-
-letter = "A"
-word = "Apple"
-#print(letter.lower() in word.lower()) #Improved
-
-#String Formating
-movie = "The Hangover"
-#print("My favorite movie is {}.".format(movie))
-#print("My favorite movie is %s." % movie)
-#print(f"My favorite movie is {movie}.") #With f sting literal
-
-#Dictionaries - key/value pairs {}
-drinks = {"White Russian": 7, "Old Fashion": 10, "Lemon Drop": 8}
-#print(drinks) #drink is the key, price is the value
-
-employees = {"Finance": ["Bob", "Linda", "Tina"], "IT": ["Gene", "Louise", "Teddy" ], "HR": ["Jimmy Jr", "Mort"] }
-#print(employees)
-employees['Legal'] = ["Mr. Frond"] #adds new key:value pair
-#print(employees)
-
-employees.update({"Sales": ["Andie", "Ollie"]}) #adds new key:value pair
-#print(employees)
-
-drinks["White Russian"] = 8 #to append or update a new value of the key "White Russian"
-#print(drinks.get("White Russian"))
-
-
+except socket.error:
+  print("Could not connect to the server.")
+  sys.exit()
+  
+  
