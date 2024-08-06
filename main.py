@@ -60,7 +60,23 @@ word = "Apple"
 
 #String Formating
 movie = "The Hangover"
-print("My favorite movie is {}.".format(movie))
-print("My favorite movie is %s." % movie)
-print(f"My favorite movie is {movie}.")
+#print("My favorite movie is {}.".format(movie))
+#print("My favorite movie is %s." % movie)
+#print(f"My favorite movie is {movie}.") #With f sting literal
+
+#Dictionaries - key/value pairs {}
+drinks = {"White Russian": 7, "Old Fashion": 10, "Lemon Drop": 8}
+#print(drinks) #drink is the key, price is the value
+
+employees = {"Finance": ["Bob", "Linda", "Tina"], "IT": ["Gene", "Louise", "Teddy" ], "HR": ["Jimmy Jr", "Mort"] }
+#print(employees)
+employees['Legal'] = ["Mr. Frond"] #adds new key:value pair
+#print(employees)
+
+employees.update({"Sales": ["Andie", "Ollie"]}) #adds new key:value pair
+#print(employees)
+
+drinks["White Russian"] = 8 #to append or update a new value of the key "White Russian"
+#print(drinks.get("White Russian"))
+
 
