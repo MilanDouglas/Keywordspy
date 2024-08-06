@@ -1,19 +1,14 @@
-#Reading and Writing files in Python
+#Classes and Objects
+class Employees:
+  def __init__(self, name, department, role, salary, years_employed):
+      self.name = name
+      self.department = department
+      self.role = role
+      self.salary = salary
+      self.years_employed = years_employed
 
-#READING FILES
-#months = open('months.txt')
-#print(months.read())
-#print(months.mode)
-#print(months.readable())
-#print(months.readlines())
-#for month in months:
-  #print(month.strip())
-#months.close()
-
-#WRITING FILES
-
-days = open('days.txt', "a")
-
-days.write("\nWednesday")
-days.close()
-
+  def eligible_for_retirement(self):
+    if self.years_employed >= 20:
+      return True
+    else:
+      return False
