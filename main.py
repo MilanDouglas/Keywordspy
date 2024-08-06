@@ -1,24 +1,42 @@
-#Classes and Objects
-class Employees:
-  def __init__(self, name, department, role, salary, years_employed):
-      self.name = name
-      self.department = department
-      self.role = role
-      self.salary = salary
-      self.years_employed = years_employed
+#BUDGET APP
+#Shoes.py
+#Define a class of shoes
+class Shoes:
+    def __init__(self, name, price):
+          self.name = name
+          self.price = float(price)
 
-  def eligible_for_retirement(self):
-    if self.years_employed >= 20:
-      return True
-    else:
-      return False
+    def budget_check(self, budget):
+          if not isinstance(budget, (int, float)):
+            print("Invalid entry. Please enter a number.")
+            exit()
+    def change(self, budget):
+          return (budget - self.price)
 
-#object and code to in another python file
-from main import main
+    def buy(self, budget):
+          self.budget_check(budget)
 
-e1 = ouremployees("Bob", "Sales", "Director od Sales", 100000, 20)
-e2 = ouremployees("Linda", "Executive", "CIO", 150000, 16)
+          if budget >= self.price:
+            print(f"You can get {self.name}")
 
-print(e1.name)
-print(e2.role)
-print(e1.eligible_for_retirement())
+          if budget == self.price:
+            print("You have enough money")
+
+          else:
+            print(f"You can get the" +self.name+ "and have ${self.cange(budget) left over")
+          exit("Thanks for using our shoe budget app!")  
+      
+            
+#Shoepurchase.py
+from  Shoes import Shoes
+low = Shoes('And 1s', 30)
+medium = Shoes('Air Force 1s', 120)
+high = Shoes('Off Whites', 400)
+
+try:
+  shoe_budget = float(input('What is your shoe budget? '))
+except ValueError:
+  exit('Please enter a number')
+
+for shoes in [high, medium, low]:
+  shoes.buy(shoe_budget)

@@ -430,6 +430,16 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "shoes"
+version = "0.0.15"
+description = "An easy way to make server and client sockets. Because socks weren't all you needed."
+optional = false
+python-versions = "*"
+files = [
+    {file = "shoes-0.0.15.zip", hash = "sha256:71e6a9433dc3bca27308deb93c003c928c3a13a541df6db2c4beb316b68ac5e9"},
+]
+
+[[package]]
 name = "soupsieve"
 version = "2.5"
 description = "A modern CSS selector implementation for Beautiful Soup."
@@ -618,4 +628,4 @@ test = ["pytest (>=6.0.0)", "setuptools (>=65)"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10.0,<3.12"
-content-hash = "346a8215c8aef35ba901c9abe645bfe09b532af37ca1f224147e3706af27c5ed"
+content-hash = "8415a921056bb59303115b712419648a207cedf1619e913a88d5065dbdfb7c0e"
