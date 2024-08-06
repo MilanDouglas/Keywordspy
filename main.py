@@ -1,17 +1,19 @@
-#Mini Caclculator
-x = float(input("Give me a number: "))
-o = input("Give an operator: ")
-y = float(input("Give me another number: "))
+#Reading and Writing files in Python
 
-if o == "+":
-  print(x + y)
-elif o == "-":
-    print(x - y)
-elif o == "/":
-  print(x / y)
-elif o == "*":
-  print(x * y)
-elif o == "**" or o == "^":
-  print(x ** y)
-else:
-  print("Unknown Operator.")
+#READING FILES
+#months = open('months.txt')
+#print(months.read())
+#print(months.mode)
+#print(months.readable())
+#print(months.readlines())
+#for month in months:
+  #print(month.strip())
+#months.close()
+
+#WRITING FILES
+
+days = open('days.txt', "a")
+
+days.write("\nWednesday")
+days.close()
+
