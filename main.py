@@ -1,4 +1,4 @@
-#BUDGET APP
+#SHOE - BUDGET APP
 #Shoes.py
 #Define a class of shoes
 class Shoes:
